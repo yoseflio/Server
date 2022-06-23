@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Catalog{% endblock %}
+
+{% block content %}
+        <div id="title">
+            {% if message %}
+                <h1>{{ message }}</h1>
+            {% endif %}
+            {% if session['logedin'] %}
+                <h1>Welcome, {{ session['name'] | upper() }}</h1>
+                <h4>Phone Number: {{ session['PhoneNumber'] | upper() }}</h4>
+                <h4>Email: {{ session['email'] | upper() }}</h4>
+            {% else %}
+                <h1>Welcome to LogIn Page</h1>
+                <h2>Login Form:</h2>
+                <form action="/log_in" method="post">
+                    <input type="email" name="Email" placeholder="Email">
+                    <input type="password" name="password" placeholder="Password">
+                    <input type="submit">
+                </form>
+            {% endif %}
+        </div>
+
+{% endblock %}
+
+
+
+

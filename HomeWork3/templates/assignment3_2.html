@@ -1,0 +1,46 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+
+    <div id="Page">
+        <div id="title">
+            {{ super() }}
+            {% if session['logedin'] %}
+                <form action="/assignment3_2">
+                    <input type="text" name="Username" placeholder="Enter UserName">
+                    <input type="submit" value="Find">
+                </form>
+                {% if Username %}
+                    <h1>{{ Username() }}</h1>
+                    <h3>Email: {{ email }}</h3>
+                {% endif %}
+
+                {% if message %}
+                    <h4 style="color: black">{{ message }}</h4>
+                {% endif %}
+
+                {% if user_dict %}
+                    <ol>
+                        {% for k, v in user_dict.items() %}
+                            <li>
+                                <h4>Name: {{ v['name'] }},</h4>
+                                <h4>Email: {{ v['email'] }},</h4>
+                                <h4>Phone Number: {{ v['PhoneNumber'] }} </h4>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                {% endif %}
+
+                {% if username %}
+                            <h4>Username: {{ username }}</h4>
+                            <h4>Email: {{ email }}</h4>
+                            <h4>Phone number: {{ phone_number }}</h4>
+                {% endif %}
+
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}

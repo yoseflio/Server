@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+        <div id="title">
+                {{ super() }}
+            {% if session['logedin'] %}
+                <h4>Please pick a product</h4>
+                <form action="/assignment3_1">
+                    <input type="text" name="product_name" placeholder="Product Name">
+                    <input type="submit" value="Find">
+                </form>
+                {% if product_name %}
+                    <h4>product name: {{ product_name.upper() }}</h4>
+                    <h4>Price: {{ product_price }}</h4>
+                {% endif %}
+
+                {% if message %}
+                    <h4 style="color: Black">{{ message }}</h4>
+                {% endif %}
+
+                {% if catalog_dict %}
+                    <ol>
+                        {% for k, v in catalog_dict.items() %}
+                            <li><h4>{{ k }} Price: {{ v }}</h4></li>
+                        {% endfor %}
+                    </ol>
+                {% endif %}
+            {% endif %}
+        </div>
+
+{% endblock %}

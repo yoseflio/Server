@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index page</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+    <div class="grid">
+            <div class="col">
+                <div class="tempbalk">
+                    <h8>Drag the slider to display the current value.</h8>
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="100" value="50" class="slider" id="TEMP">
+                        <p>Temperature: <span id="tempC"></span> ℃ (<span id="tempF"></span> °F)</p>
+                        <p>Test: <span id="test"></span> %</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h4>Col 1</h4>
+                <p>Hi this is web course</p>
+            </div>
+            <div class="col">
+                <h4>Col 2</h4>
+            </div>
+            <div class="col">
+                <h4>Col 3</h4>
+                <p>Hi this is web course</p>
+            </div>
+            <div class="col">
+                <h4>Col 4</h4>
+            </div>
+            <div class="col">
+                <h4>Col 5</h4>
+                <p> <h4>{{super()}} </h4></p>
+            </div>
+            <div class="col">
+                <h4>Col 6</h4>
+            </div>
+            <div class="col">
+                <h4>Col 7</h4>
+                <p>Hi this is web course</p>
+            </div>
+        </div>
+{% endblock %}
+</body>
+</html>

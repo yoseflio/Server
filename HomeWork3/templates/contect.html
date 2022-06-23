@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+
+
+        <div class="container">
+            <header class="ageCalc">
+                <p id="resultBday">Your Age:</p>
+            </header>
+            <div class="contact-box">
+                <div class="left"></div>
+                <div class="right">
+                    <h2>Contect Us</h2>
+                        <input type="text" class="field" placeholder="Your Name">
+                        <input placeholder="Your Birthdate" class="field" type="text" onfocus="(this.type='date')" id="date" onchange="submitBday()">
+                        <input type="email" class="field" placeholder="Your Email">
+                        <input type="phone" class="field" placeholder="Your Phone">
+                        <textarea class="field area" placeholder="Message"></textarea>
+                        <label for="gender" class="field2">Gender:</label>
+                        <input type="radio" name="gender" class="field2" value="Male"> Male
+                        <input type="radio" name="gender" class="field2" value="Female"> Female
+                        <button class="btn" id="submit" type="submit">Send</button>
+                </div>
+            </div>
+            <div class="bird-container bird-container--one">
+                <div class="bird bird--one"></div>
+            </div>
+
+            <div class="bird-container bird-container--two">
+                <div class="bird bird--two"></div>
+            </div>
+
+            <div class="bird-container bird-container--three">
+                <div class="bird bird--three"></div>
+            </div>
+
+            <div class="bird-container bird-container--four">
+                <div class="bird bird--four"></div>
+            </div>
+        </div>
+{% endblock %}
+</body>
+</html>
