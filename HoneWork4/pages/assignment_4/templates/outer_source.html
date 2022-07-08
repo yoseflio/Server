@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>outer source</title>
+</head>
+<body>
+
+{% extends 'base4.html' %}
+{% block content %}
+
+<div class="container1">
+    <div class="contact-box">
+        <div class="left"></div>
+        <div class="right">
+    <div style="margin: 10vw">
+    <h1>Frontend</h1>
+        <form id="myform" class="myfoms">
+            <h2>Enter a user ID:</h2>
+            <p>Please enter ID between 1-12</p>
+            <input type="number" name="id" placeholder="Insert ID" min="1" max="12" required>
+            <button onclick="myFunction()">Submit</button>
+        </form>
+
+<section id="frontend_section"></section>
+
+
+<h1>Backend</h1>
+
+<form action="/fetch_be" id="outer_form_backend" class="outer_forms">
+    <h2>Search my Backend:</h2>
+    <p>Please enter ID between 1-12</p>
+      <input type="hidden" name="type" value="sync">
+    <input type="number" name="user_id" placeholder="Insert ID" min="1" max="12" required>
+    <button>Submit</button>
+</form>
+
+{% if name %}
+            <br>
+            <fieldset>
+            <h3>This is {{ name }} :</h3>
+            <img src="{{ avatar }}" alt="Profile Picture"/>
+            <p>You can always contact us via:</p>
+            <a href="{{ email }}">{{ name }}s Email</a><br><br>
+        </fieldset>
+{% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
