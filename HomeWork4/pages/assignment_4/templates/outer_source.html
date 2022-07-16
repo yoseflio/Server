@@ -11,8 +11,6 @@
 
 <div class="container1">
     <div class="contact-box">
-        <div class="left"></div>
-        <div class="right">
     <div style="margin: 10vw">
     <h1>Frontend</h1>
         <form id="myform" class="myfoms">
@@ -21,9 +19,6 @@
             <input type="number" name="id" placeholder="Insert ID" min="1" max="12" required>
             <button onclick="myFunction()">Submit</button>
         </form>
-
-<section id="frontend_section"></section>
-
 
 <h1>Backend</h1>
 
@@ -40,13 +35,14 @@
             <fieldset>
             <h3>This is {{ name }} :</h3>
             <img src="{{ avatar }}" alt="Profile Picture"/>
-            <p>You can always contact us via:</p>
+                <br>
             <a href="{{ email }}">{{ name }}s Email</a><br><br>
         </fieldset>
 {% endif %}
         </div>
     </div>
 </div>
+<script src="../../../static/Javascript.js"></script>
 {% endblock %}
 </body>
 </html>

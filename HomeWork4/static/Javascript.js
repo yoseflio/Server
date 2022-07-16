@@ -58,16 +58,38 @@ function submitBday() {
 }
 
 function myFunction() {
- document.querySelector('#myform')?.addEventListener('submit', (e) => {
-        e.preventDefault()
-    const user_id = e.target.id.value
-    console.log(user_id)
-    fetch('https://reqres.in/api/users/'+user_id).then(/*good web to play with req & res*/
-        response => response.json()/*like pars*/
+
+    fetch('/users').then(
+            response => response.json()
+    ).then(
+            response => createUsersList(response.data)
+    ).catch(
+            err => console.log(err)
+    )
+    fetch('https://reqres.in/api/users?page=2').then(
+        response => response.json()
     ).then(
         responseOBJECT => createUsersList(responseOBJECT.data)
     ).catch(
-        err => console.log(err)/*מדפיס את השגיאה בקונסולה*/
+        err => console.log(err)
     );
-})
+}
+
+function createUsersList(response){
+
+    const currMain = document.querySelector("main")
+    for (let user of response){
+        console.log(user)
+        const section = document.createElement('section')
+        section.innerHTML = `
+            <img src="${user.avatar}" alt="Profile Picture"/>
+            <div>
+             <span>${user.first_name} ${user.last_name}</span>
+             <br>
+             <a href="mailto:${user.email}">Send Email</a>
+            </div>
+        `
+        currMain.appendChild(section)
+    }
+
 }

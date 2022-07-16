@@ -169,7 +169,6 @@ def outer_source():
 @assignment_4.route('/fetch_be')
 def fetch_be():
     if 'type' in request.args:
-        print('after click')
         user_id = request.args['user_id']
         users = []
         res = requests.get('https://reqres.in/api/users/' + user_id)
